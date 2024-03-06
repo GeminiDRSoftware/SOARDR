@@ -1,9 +1,9 @@
 """
-Test recipe for GOODMAN SPECT data.
+Test recipe for GOODMAN IMAGE data.
 
 """
 
-recipe_tags = set(['GOODMAN', 'SPECT'])
+recipe_tags = set(['GOODMAN', 'IMAGE'])
 
 def grecipe(p):
     p.helloWorld()
