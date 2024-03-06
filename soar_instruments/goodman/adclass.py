@@ -15,7 +15,7 @@ class AstroDataGOODMAN(AstroDataSOAR):
     
     @astro_data_tag
     def _tag_arc(self):
-        if self.phu.get('OBSTYPE') == 'COMP':
+        if self.phu.get('OBSTYPE') == 'ARC':
             return TagSet(['ARC', 'CAL'])
 
     @astro_data_tag
@@ -25,7 +25,7 @@ class AstroDataGOODMAN(AstroDataSOAR):
 
     @astro_data_tag
     def _tag_flat(self):
-        if self.phu.get('OBSTYPE') == 'FLAT':
+        if self.phu.get('OBSTYPE') == 'LAMPFLAT':
             return TagSet(['FLAT', 'CAL'])
 
     @astro_data_tag
@@ -40,12 +40,12 @@ class AstroDataGOODMAN(AstroDataSOAR):
 
     @astro_data_tag
     def _tag_image(self):
-        if self.phu.get('CAM_ANG') == 0 and self.phu.get('WAVMOD') == 'Imaging':
+        if self.phu.get('CAM_ANG') == 0 and self.phu.get('WAVMOD') == 'IMAGING':
             return TagSet(['IMAGE'])
         
     @astro_data_tag
     def _tag_spect(self):
-        if self.phu.get('CAM_ANG') != 0 and self.phu.get('WAVMOD') != 'Imaging':
+        if self.phu.get('CAM_ANG') != 0 and self.phu.get('WAVMOD') != 'IMAGING':
             return TagSet(['SPECT'])
 
 
